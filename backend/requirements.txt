@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic[email]
+argon2-cffi
+PyJWT
