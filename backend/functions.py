@@ -6,6 +6,7 @@ DB_PATH = "visitors.db"
 engine = create_engine(f"sqlite:///{DB_PATH}")
 Base = declarative_base()
 
+# LA_FUNCTIONS
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)
@@ -26,3 +27,4 @@ class Visitor(Base):
     created_at = Column(DateTime, default=datetime.now)
 
 Base.metadata.create_all(engine)
+
