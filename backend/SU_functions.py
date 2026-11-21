@@ -51,3 +51,4 @@ def register_visitor(username, visitor_name, student_name, room_no, purpose, vis
     }
     session.close()
     return response
+
