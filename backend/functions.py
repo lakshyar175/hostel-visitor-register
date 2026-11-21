@@ -27,4 +27,3 @@ class Visitor(Base):
     created_at = Column(DateTime, default=datetime.now)
 
 Base.metadata.create_all(engine)
-
