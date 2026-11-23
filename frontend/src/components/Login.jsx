@@ -15,7 +15,7 @@ function Login({ apiUrl, onLogin }) {
       const data = await res.json();
 
       if (res.ok) {
-        onLogin(data);   // sends access_token and refresh_token up to App
+        onLogin(data);   
       } else {
         setMessage(typeof data.detail === "string" ? data.detail : "Enter a valid email address and password");
       }
