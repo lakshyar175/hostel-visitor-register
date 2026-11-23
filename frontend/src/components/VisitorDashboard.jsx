@@ -1,36 +1,30 @@
 import { useState, useEffect } from "react";
 
-function VisitorDashboard({ apiUrl, setPage }) {
+function VisitorDashboard({ apiUrl, tokens, setTokens, onLogout }) {
   const [visitors, setVisitors] = useState(null);
   const [message, setMessage] = useState("");
 
-  function logout() {
-    localStorage.clear();
-    setPage("login");
-  }
-
   async function loadVisitors() {
     const get = (token) =>
-      fetch(apiUrl + "/visitors", { headers: { Authorization: "Bearer " + token } });
+      fetch(apiUrl + "/visitors", { headers: { "access-token": token } });
     try {
-      let res = await get(localStorage.getItem("access_token"));
+      let res = await get(tokens.access_token);
 
+      // access token expired -> get a new one with the refresh token
       if (res.status === 401) {
-        // access token expired, get a new one using the refresh token
         const r = await fetch(apiUrl + "/refresh", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ refresh_token: localStorage.getItem("refresh_token") }),
+          headers: { "refresh-token": tokens.refresh_token },
         });
-        if (!r.ok) return logout();
+        if (!r.ok) return onLogout();
         const t = await r.json();
-        localStorage.setItem("access_token", t.access_token);
+        setTokens({ ...tokens, access_token: t.access_token });
         res = await get(t.access_token);
       }
 
       const data = await res.json();
       if (res.ok) setVisitors(data);
-      else setMessage(data.detail);
+      else setMessage(typeof data.detail === "string" ? data.detail : "Something went wrong");
     } catch {
       setMessage("Cannot connect to the server");
     }
@@ -43,15 +37,13 @@ function VisitorDashboard({ apiUrl, setPage }) {
   return (
     <div>
       <h3>Visitor Dashboard</h3>
-      <button onClick={logout}>Logout</button>
+      <button onClick={onLogout}>Logout</button>
       {message && <p>{message}</p>}
       {visitors && visitors.length === 0 && <p>No visitor records found.</p>}
       {visitors && visitors.length > 0 && (
         <table border="1" cellPadding="6">
           <thead>
-            <tr>
-              <th>Visitor</th><th>Student</th><th>Room</th><th>Purpose</th><th>Date</th>
-            </tr>
+            <tr><th>Visitor</th><th>Student</th><th>Room</th><th>Purpose</th><th>Date</th></tr>
           </thead>
           <tbody>
             {visitors.map((v) => (
