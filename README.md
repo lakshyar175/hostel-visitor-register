@@ -297,5 +297,7 @@ Screenshot showing a successful GitHub Actions workflow execution after deployme
 
 
 
-## 7. Known Issues and Future Improvements
+
+
+
 
