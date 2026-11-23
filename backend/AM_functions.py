@@ -91,6 +91,7 @@ def verify_login(email,password):
     session.close()
     return tokens
 
+
 def get_visitors_by_staff(email):
     session=Session(engine)
     user=session.query(User).filter_by(email=email).first()
