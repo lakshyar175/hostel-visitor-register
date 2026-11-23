@@ -21,7 +21,7 @@ The main aim of this project is to make hostel visitor management easier and mai
 | A3 | Refresh Token | POST | Amruta |
 | E1 | Register Visitor | POST | Supriya |
 | E2 | View Visitors | GET | Amrutha |
-
+| Table Cretaion | Lakshya |
 ---
 
 ## 2. Live App
