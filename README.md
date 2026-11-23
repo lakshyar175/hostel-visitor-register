@@ -1,5 +1,3 @@
-<img width="1459" height="455" alt="image" src="https://github.com/user-attachments/assets/dda073c3-f456-4753-9271-288087ba887c" />Hostel Visitor Register
-
 A web-based application developed to manage visitor records in a hostel. The system allows hostel staff to register and log in, record visitor information and view the registered visitor details.
 
 The main aim of this project is to make hostel visitor management easier and maintain visitor information digitally instead of maintaining everything manually.
@@ -249,22 +247,19 @@ The following screenshots demonstrate the working of the application.
 
 ### 1. Staff Registration
 
-Screenshot showing the staff registration page and the registration process.
-
+<img width="917" height="775" alt="image" src="https://github.com/user-attachments/assets/f51fb2ad-7744-4612-bb6c-7ebaf0db7d66" />
 
 
 
 ### 2. Staff Login
 
-Screenshot showing the login page where registered staff members can authenticate themselves.
+<img width="918" height="795" alt="image" src="https://github.com/user-attachments/assets/e9a2279f-09ce-43a0-8b74-b4a73175caef" />
 
-![Login Screenshot](screenshots/login.png)
 
 ### 3. Dashboard
 
-Screenshot showing the dashboard where visitor records are displayed.
+<img width="506" height="241" alt="image" src="https://github.com/user-attachments/assets/ea4608bc-0745-4053-adea-66c8063efb6d" />
 
-![Dashboard Screenshot](screenshots/dashboard.png)
 
 ### 4. Error Message
 
@@ -274,9 +269,7 @@ Screenshot showing an error message when invalid information is entered or an op
 
 ### 5. API Endpoint in Swagger UI
 
-Screenshot showing a successfully tested API endpoint in the FastAPI `/docs` interface.
-
-![Swagger Screenshot](screenshots/swagger.png)
+<img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/96ad7fdd-91d7-40fd-97c1-241c22f8fc92" />
 
 ### 6. GitHub Actions
 
@@ -285,30 +278,5 @@ Screenshot showing a successful GitHub Actions workflow execution after deployme
 <img width="1360" height="353" alt="image" src="https://github.com/user-attachments/assets/2a2faeb6-689b-424b-ad70-935e5d62e2a2" />
 
 
----
-
 ## 7. Known Issues and Future Improvements
 
-### Known Issues
-
-- The application currently has basic visitor management functionality.
-- The user interface can be improved further.
-- Additional validation can be added to prevent incorrect visitor information.
-- Authentication and access control can be further improved.
-
-### Future Improvements
-
-- Add an option to edit and delete visitor records.
-- Add search and filter functionality to find visitor records easily.
-- Include visitor check-in and check-out time tracking.
-- Improve the dashboard with visitor statistics.
-- Add more detailed staff management features.
-- Improve the overall user interface and responsiveness.
-
----
-
-**Project:** Hostel Visitor Register
-
-**Developed as part of:** Mini Project
-
-**Repository:** https://github.com/lakshyar175/hostel-visitor-register
