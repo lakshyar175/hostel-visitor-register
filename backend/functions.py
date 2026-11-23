@@ -15,7 +15,7 @@ REFRESH_TOKEN_EXPIRY=7*24*60
 SECRET_KEY="SECRETway"
 ALGORITHM="HS256"
 
-DB_PATH = "sqlite:////app/data/warehouse.db"
+DB_PATH = "sqlite:////app/data/visitors.db"
 engine = create_engine(DB_PATH)
 Base = declarative_base()
 
