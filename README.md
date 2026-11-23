@@ -1,4 +1,4 @@
-Hoster visitor Register
+## Hostel Visitor Register
 
 
 A web-based application developed to manage visitor records in a hostel. The system allows hostel staff to register and log in, record visitor information and view the registered visitor details.
@@ -9,9 +9,8 @@ The main aim of this project is to make hostel visitor management easier and mai
 
 ## 1. Project and Team
 
-### Project Name
-**Hostel Visitor Register**
-
+### Project Name **Hostel Visitor Register**
+## Team Members: Amruta, Lakshya, Supriya
 ### Team Members and Endpoint Contribution
 
 | Endpoint ID | Endpoint | Method | Developed By |
