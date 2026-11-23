@@ -18,7 +18,6 @@ def register_staff(username, email, password):
     new_user = User(username=username,email=email,hashed_password=ph.hash(password))
     session.add(new_user)
     session.commit()
-    session.refresh(new_user)
     response = {
         "id": new_user.id,
         "username": new_user.username,
@@ -39,7 +38,6 @@ def register_visitor(username, visitor_name, student_name, room_no, purpose, vis
     new_visitor = Visitor(user_id=user.id,visitor_name=visitor_name,student_name=student_name,room_no=room_no,purpose=purpose,visit_date=visit_date)
     session.add(new_visitor)
     session.commit()
-    session.refresh(new_visitor)
     response = {
         "id": new_visitor.id,
         "visitor_name": new_visitor.visitor_name,
