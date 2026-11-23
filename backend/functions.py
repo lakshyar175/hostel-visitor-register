@@ -71,7 +71,7 @@ def verify_token(token,token_type):
 
 def verify_login(email,password):
     session=Session(engine)
-    user=session.query(User).filter_by(email=email).first()
+    user=session.query(User).filter_by(email=email.lower()).first()
     if user is None:
         session.close()
         return False
@@ -109,9 +109,10 @@ def register_staff(username, email, password):
     return response
 
 
-def register_visitor(username, visitor_name, student_name, room_no, purpose, visit_date):
+def register_visitor(email,visitor_name, student_name, room_no, purpose, visit_date):
     session = Session(engine)
-    user = session.query(User).filter_by(username=username).first()
+    email = email.strip().lower()
+    user = session.query(User).filter_by(email=email).first()
     if not user:
         session.close()
         return None
@@ -134,7 +135,8 @@ def register_visitor(username, visitor_name, student_name, room_no, purpose, vis
 
 def get_visitors_by_staff(email):
     session=Session(engine)
-    user=session.query(User).filter_by(email=email).first()
+    email = email.strip().lower()
+    user=session.query(User).filter_by(email=email.lower()).first()
     if user is None:
         session.close()
         return []
