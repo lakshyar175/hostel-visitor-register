@@ -1,3 +1,6 @@
+Hoster visitor Register
+
+
 A web-based application developed to manage visitor records in a hostel. The system allows hostel staff to register and log in, record visitor information and view the registered visitor details.
 
 The main aim of this project is to make hostel visitor management easier and maintain visitor information digitally instead of maintaining everything manually.
@@ -13,11 +16,11 @@ The main aim of this project is to make hostel visitor management easier and mai
 
 | Endpoint ID | Endpoint | Method | Developed By |
 |---|---|---|---|
-| A1 | Staff Registration | POST | [Supriya] |
-| A2 | Staff Login | POST | [Amruta] |
-| A3 | Refresh Token | POST | [Amruta] |
-| E1 | Register Visitor | POST | [Amruta] |
-| E2 | View Visitors | GET | [Supriya] |
+| A1 | Staff Registration | POST | Supriya |
+| A2 | Staff Login | POST | Amruta |
+| A3 | Refresh Token | POST | Amruta |
+| E1 | Register Visitor | POST | Amruta |
+| E2 | View Visitors | GET | Supriya |
 
 ---
 
@@ -154,7 +157,7 @@ The application provides five main API endpoints for staff authentication and vi
 | A2 | POST | `/login` | email, password | 201 |
 | A3 | POST | `/refresh` | Refresh token in header | 201 |
 | E1 | POST | `/visitors` | visitor_name, student_name, room_no, purpose, visit_date | 201 |
-| E2 | GET | `/visitors` | Access token in header | 201 |
+| E2 | GET | `/visitors` | Access token in header | 200 |
 
 ### Request Body Examples
 
@@ -251,9 +254,17 @@ The following screenshots demonstrate the working of the application.
 
 
 
+<img width="317" height="433" alt="image" src="https://github.com/user-attachments/assets/b2600e4d-14dc-4765-a683-89c0b9c501ed" />
+
+
+
+
 ### 2. Staff Login
 
+
 <img width="918" height="795" alt="image" src="https://github.com/user-attachments/assets/e9a2279f-09ce-43a0-8b74-b4a73175caef" />
+
+
 
 
 ### 3. Dashboard
@@ -261,21 +272,29 @@ The following screenshots demonstrate the working of the application.
 <img width="506" height="241" alt="image" src="https://github.com/user-attachments/assets/ea4608bc-0745-4053-adea-66c8063efb6d" />
 
 
+
+
 ### 4. Error Message
 
-Screenshot showing an error message when invalid information is entered or an operation fails.
 
-![Error Screenshot](screenshots/error.png)
+<img width="605" height="648" alt="image" src="https://github.com/user-attachments/assets/af545c71-ad18-4446-96a1-9254b38dcb67" />
+
+
 
 ### 5. API Endpoint in Swagger UI
 
 <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/96ad7fdd-91d7-40fd-97c1-241c22f8fc92" />
+
+
+
 
 ### 6. GitHub Actions
 
 Screenshot showing a successful GitHub Actions workflow execution after deployment.
 
 <img width="1360" height="353" alt="image" src="https://github.com/user-attachments/assets/2a2faeb6-689b-424b-ad70-935e5d62e2a2" />
+
+
 
 
 ## 7. Known Issues and Future Improvements
