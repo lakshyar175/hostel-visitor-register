@@ -46,6 +46,6 @@ jobs:
             sudo usermod -aG docker $USER
             sudo docker pull ${{ env.IMAGE }}:${{ env.VERSION }}
             sudo docker rm -f hostel-visitor-register || true
-            sudo docker run -d --name hostel-visitor-register --restart unless-stopped -p 8000:8006 ${{ env.IMAGE }}:${{ env.VERSION }}
+            sudo docker run -d --name hostel-visitor-register --restart unless-stopped -p 8000:8000 ${{ env.IMAGE }}:${{ env.VERSION }}
             sudo docker image prune -af
             sudo docker ps --filter name=hostel-visitor-register
