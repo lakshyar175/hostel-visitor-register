@@ -6,3 +6,4 @@ sqlalchemy>=2.0
 pyjwt
 argon2-cffi
 requests
+pydantic[email]
