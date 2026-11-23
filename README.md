@@ -10,7 +10,7 @@ The main aim of this project is to make hostel visitor management easier and mai
 ## 1. Project and Team
 
 ## Project Name :**Hostel Visitor Register**
-** Team Members: Amruta, Lakshya, Supriya**
+**## Team Members: Amruta, Lakshya, Supriya**
 
 
 ### Team Members and Endpoint Contribution
