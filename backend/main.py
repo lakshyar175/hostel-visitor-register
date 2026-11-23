@@ -24,6 +24,7 @@ class Staff(BaseModel):
 class LoginIn(BaseModel):
     eamil:EmailStr
     password: str = Field(min_length=1)
+
 class VisitorIn(BaseModel):
     visitor_name: str = Field(min_length=1)
     student_name: str = Field(min_length=1)
@@ -61,10 +62,6 @@ def get_visitor(access_token=Header(None)):
         raise HTTPException(status_code=401,detail="Invalid or expired token")
     
     return f.get_visitors_by_staff(email=payload["email"])
-
-
-
-
 
 #E2
 
