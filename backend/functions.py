@@ -16,7 +16,7 @@ SECRET_KEY="SECRETway"
 ALGORITHM="HS256"
 
 DB_PATH = "sqlite:////app/data/warehouse.db"
-engine = create_engine({DB_PATH})
+engine = create_engine(DB_PATH)
 Base = declarative_base()
 
 class User(Base):
