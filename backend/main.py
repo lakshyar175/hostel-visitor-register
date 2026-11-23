@@ -33,7 +33,7 @@ class VisitorIn(BaseModel):
     visit_date: date
     
 #A1
-@app.post("/register")
+@app.post("/regis")
 def register_staff(username: Staff):
     result = f.register_staff(username=username.username,email=username.email,password=username.password)
     if result is None:
