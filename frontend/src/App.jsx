@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Register from "./Register";
-import Login from "./Login";
-import VisitorDashboard from "./VisitorDashboard";
+// import Register from "./components/Register.jsx";
+import Login from "./components/Login.jsx";
+import VisitorDashboard from "./components/VisitorDashboard.jsx";
 
 const API_URL = "http://127.0.0.1:8001";
 
