@@ -22,7 +22,7 @@ class Staff(BaseModel):
     password: str = Field(min_length=1)
 
 class LoginIn(BaseModel):
-    eamil:EmailStr
+    email: EmailStr          
     password: str = Field(min_length=1)
 
 class VisitorIn(BaseModel):
@@ -33,7 +33,7 @@ class VisitorIn(BaseModel):
     visit_date: date
     
 #A1
-@app.post("/register")
+@app.post("/regis")
 def register_staff(username: Staff):
     result = f.register_staff(username=username.username,email=username.email,password=username.password)
     if result is None:
@@ -41,10 +41,10 @@ def register_staff(username: Staff):
     return result
 
 @app.post("/login")
-def login(l:LoginIn):
-    token=f.verify_login(email=l.email,password=l.password)
+def login(l: LoginIn):
+    token = f.verify_login(email=l.email, password=l.password)
     if not token:
-        raise HTTPException(status_code=401,detail="Access denied")
+        raise HTTPException(status_code=401, detail="Invalid email or password")
     return token
 
 @app.post("/refresh")

@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - hostel-visitor-register/backend/**
+      - backend/**
   workflow_dispatch:
 
 jobs:
@@ -27,8 +27,8 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
-          context: hostel-visitor-register/backend
-          file: hostel-visitor-register/backend/dockerfile
+          context: backend
+          file: backend/dockerfile
           push: true
           tags: |
             ${{ env.IMAGE }}:latest
