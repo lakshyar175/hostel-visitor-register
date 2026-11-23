@@ -6,8 +6,7 @@ import VisitorDashboard from "./components/VisitorDashboard.jsx";
 const API_URL = "http://127.0.0.1:8001";
 
 function App() {
-  const [tokens, setTokens] = useState(null);   // null = not logged in
-
+  const [tokens, setTokens] = useState(null);   
   return (
     <div>
       <h2>Hostel Visitor Register</h2>
