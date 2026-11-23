@@ -31,6 +31,7 @@ class VisitorIn(BaseModel):
     purpose: str = Field(min_length=1)
     visit_date: date
     
+#A1
 @app.post("/register")
 def register_staff(username: Staff):
     result = f.register_staff(username=username.username,email=username.email,password=username.password)
@@ -62,13 +63,7 @@ def get_visitor(access_token=Header(None)):
     return f.get_visitors_by_staff(email=payload["email"])
 
 
-#A1
-@app.post("/register")
-def register_staff(username: Staff):
-    result = f.register_staff(username=username.username,email=username.email,password=username.password)
-    if result is None:
-        raise HTTPException(status_code=409, detail="Email already exists")
-    return result
+
 
 
 #E2
