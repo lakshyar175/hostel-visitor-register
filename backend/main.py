@@ -21,6 +21,9 @@ class Staff(BaseModel):
     email: EmailStr
     password: str = Field(min_length=1)
 
+class LoginIn(BaseModel):
+    eamil:EmailStr
+    password: str = Field(min_length=1)
 class VisitorIn(BaseModel):
     visitor_name: str = Field(min_length=1)
     student_name: str = Field(min_length=1)
@@ -36,7 +39,7 @@ def register_staff(username: Staff):
     return result
 
 @app.post("/login")
-def login(l:Staff):
+def login(l:LoginIn):
     token=f.verify_login(email=l.email,password=l.password)
     if not token:
         raise HTTPException(status_code=401,detail="Access denied")
