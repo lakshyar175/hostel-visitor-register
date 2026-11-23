@@ -28,6 +28,12 @@ class Visitor(BaseModel):
     purpose: str = Field(min_length=1)
     visit_date: date
     
+@app.post("/register")
+def register_staff(username: Staff):
+    result = s.register_staff(username=username.username,email=username.email,password=username.password)
+    if result is None:
+        raise HTTPException(status_code=409, detail="Email already exists")
+    return result
 
 @app.post("/login")
 def login(email=Body(),password=Body()):
@@ -43,35 +49,6 @@ def refresh_token(refresh_token=Header(None)):
         raise HTTPException(status_code=401,detail="Invaild or token expired")
     access_token=a.create_token(email=payload["email"],token_type="access")
     return {"access_token":access_token}
-
-
-@app.get("/visitors")
-def get_visitor(access_token=Header(None)):
-    payload=a.verify_token(token=access_token,token_type="access")
-    if not payload:
-        raise HTTPException(status_code=401,detail="Invalid or expired token")
-    if payload["email"] != "email":
-        raise HTTPException(status_code=403,detail="invalid credentials")
-    return a.get_visitors_by_staff(email=payload["email"])
-
-from fastapi import FastAPI, HTTPException, Header
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, EmailStr, Field
-from datetime import date
-import SU_functions as s
-import AM_functions as a
-
-
-#A1
-@app.post("/register")
-def register_staff(username: Staff):
-    result = s.register_staff(username=username.username,email=username.email,password=username.password)
-    if result is None:
-        raise HTTPException(status_code=409, detail="Email already exists")
-    return result
-
-
-#E2
 
 @app.post("/visitors")
 def register_visitor(visitor: Visitor, access_token=Header(None)):
@@ -89,3 +66,12 @@ def register_visitor(visitor: Visitor, access_token=Header(None)):
     if result is None:
         raise HTTPException(status_code=401, detail="Unauthorized")
     return result
+
+@app.get("/visitors")
+def get_visitor(access_token=Header(None)):
+    payload=a.verify_token(token=access_token,token_type="access")
+    if not payload:
+        raise HTTPException(status_code=401,detail="Invalid or expired token")
+    if payload["email"] != "email":
+        raise HTTPException(status_code=403,detail="invalid credentials")
+    return a.get_visitors_by_staff(email=payload["email"])
