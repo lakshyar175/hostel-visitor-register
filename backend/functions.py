@@ -15,8 +15,8 @@ REFRESH_TOKEN_EXPIRY=7*24*60
 SECRET_KEY="SECRETway"
 ALGORITHM="HS256"
 
-DB_PATH = "visitors.db"
-engine = create_engine(f"sqlite:///{DB_PATH}")
+DB_PATH = "sqlite:////app/data/warehouse.db"
+engine = create_engine({DB_PATH})
 Base = declarative_base()
 
 class User(Base):
