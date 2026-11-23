@@ -18,8 +18,8 @@ The main aim of this project is to make hostel visitor management easier and mai
 | A1 | Staff Registration | POST | Supriya |
 | A2 | Staff Login | POST | Amruta |
 | A3 | Refresh Token | POST | Amruta |
-| E1 | Register Visitor | POST | Amruta |
-| E2 | View Visitors | GET | Supriya |
+| E1 | Register Visitor | POST | Supriya |
+| E2 | View Visitors | GET | Amrutha |
 
 ---
 
