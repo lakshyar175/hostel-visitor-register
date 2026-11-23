@@ -10,7 +10,7 @@ function VisitorDashboard({ apiUrl, tokens, setTokens, onLogout }) {
     try {
       let res = await get(tokens.access_token);
 
-      // access token expired -> get a new one with the refresh token
+      
       if (res.status === 401) {
         const r = await fetch(apiUrl + "/refresh", {
           method: "POST",
